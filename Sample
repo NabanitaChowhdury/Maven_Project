@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# Initialize Git repository
+git init
+
+# Add files to the staging area
+echo "This is a sample file." > sample.txt
+git add sample.txt
+
+# Check the status of the repository
+git status
+
+# Commit changes
+git commit -m "Added sample.txt file"
+
+# Create a new branch
+git branch development
+
+# Switch to the new branch
+git checkout development
+
+# Create a new file on the development branch
+echo "This is a new file on the development branch." > development_file.txt
+git add development_file.txt
+git commit -m "Added development_file.txt"
+
+# Merge changes from development branch to master
+git checkout master
+git merge development -m "Merged changes from development branch"
+
+# View commit history
+git log
+
+# Push changes to a remote repository
+# Replace <remote_name> and <branch_name> with actual values
+# git remote add origin <remote_repo_url>
+# git push -u origin master
+
+# Clean up (optional)
+# Remove the local repository
+# rm -rf .git
